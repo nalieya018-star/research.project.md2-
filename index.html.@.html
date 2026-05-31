@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetics & Derivatives in Agro-Product Technology</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome Icons for Agro-theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MathJax for rendering LaTeX formulas beautifully -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-emerald-800 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <span class="p-2.5 bg-emerald-700 rounded-lg text-emerald-100 flex items-center justify-center">
+                    <i class="fa-solid fa-flask-vial text-xl"></i>
+                </span>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight">Agro-Product Bio-Kinetics Platform</h1>
+                    <p class="text-xs text-emerald-200">SFP: Agro Product Technology — Academic Portal</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs sm:text-sm bg-emerald-900/60 px-3 py-1.5 rounded-full border border-emerald-700/50">
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse"></span>
+                <span class="font-medium text-emerald-100">Interactive Derivative Engine v2.5</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Column: Scenario & Science Explanation (5 Cols) -->
+        <section class="lg:col-span-5 flex flex-col gap-6">
+            
+            <!-- Bioscience Scenario Context Box -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-2 text-emerald-700 mb-3">
+                    <i class="fa-solid fa-leaf text-lg"></i>
+                    <h2 class="text-sm font-bold uppercase tracking-wider">Malaysian Agro-Waste Scenario</h2>
+                </div>
+                <h3 class="text-xl font-bold text-slate-950 mb-2 leading-snug">
+                    Optimizing Solid-State Bioconversion of Oil Palm Empty Fruit Bunches (OPEFB)
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    In Malaysia, the palm oil industry generates roughly <strong>20 million tonnes</strong> of Empty Fruit Bunches (OPEFB) annually (<a href="https://jopr.mpob.gov.my" target="_blank" class="text-emerald-600 font-semibold hover:underline">Journal of Oil Palm Research, MPOB</a>). As an Agro-Product Technology expert, managing this abundant lignocellulosic residue is critical. 
+                </p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    To upgrade OPEFB into high-value bio-fertilizers, we inoculate the substrate with cellulose-degrading fungi (e.g., <em>Trichoderma asperellum</em>). By modeling the cumulative microbial biomass growth \(X(t)\), we can use the <strong>first derivative \(X'(t)\)</strong> to identify exactly when the bioconversion is working at maximum efficiency.
+                </p>
+                <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-100/80 flex items-start gap-3">
+                    <i class="fa-solid fa-circle-info text-emerald-600 mt-0.5"></i>
+                    <div class="text-xs text-emerald-800 leading-relaxed">
+                        <strong>Practical Value of Derivatives:</strong> The peak of the rate function \(X'(t)\) represents the point of maximum fungal activity. Harvesting or adding nutrient adjuvants at this exact moment maximizes substrate processing throughput!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mathematical Modeling Section -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-2 text-emerald-700 mb-3">
+                    <i class="fa-solid fa-square-root-variable text-lg"></i>
+                    <h2 class="text-sm font-bold uppercase tracking-wider">Kinetic Formulas & Calculus</h2>
+                </div>
+                
+                <p class="text-slate-600 text-sm mb-4">
+                    The growth profile follows a classic <strong>Logistic Sigmoid Model</strong>, standard in biochemical batch kinetics:
+                </p>
+
+                <!-- Equation 1 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4 overflow-x-auto text-center">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide block mb-1">Cumulative Growth \(f(t)\)</span>
+                    <div class="text-slate-900 font-serif text-lg py-1">
+                        \[f(t) = \frac{K}{1 + \left(\frac{K - X_0}{X_0}\right) e^{-\mu_m t}}\]
+                    </div>
+                </div>
+
+                <!-- Equation 2 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4 overflow-x-auto text-center">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide block mb-1">Bioconversion Rate \(f'(t)\) (First Derivative)</span>
+                    <div class="text-slate-900 font-serif text-lg py-1">
+                        \[f'(t) = \mu_m \cdot f(t) \cdot \left(1 - \frac{f(t)}{K}\right)\]
+                    </div>
+                </div>
+
+                <div class="text-xs text-slate-500 space-y-1 border-t border-slate-100 pt-3">
+                    <p class="font-semibold text-slate-700">Model Constants (Calculated for OPEFB @ 30°C):</p>
+                    <p>• \(K\) (Carrying Capacity) = <strong>120.0 g/kg</strong> dry matter microbial density</p>
+                    <p>• \(X_0\) (Initial Inoculum) = <strong>2.5 g/kg</strong> dry matter starter culture</p>
+                    <p>• \(\mu_m\) (Maximum Specific Growth Rate) = <strong>0.38 day\(^{-1}\)</strong></p>
+                    <p>• \(t\) = Bioprocessing period in <strong>days</strong> (\(0 \le t \le 25\))</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Column: Interactive Graph & Derivative Output (7 Cols) -->
+        <section class="lg:col-span-7 flex flex-col gap-6">
+            
+            <!-- Main Graph Dashboard -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col gap-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-950">Bioconversion Profile Analysis</h2>
+                        <p class="text-xs text-slate-500">Click anywhere on the graph lines to compute instant derivative kinetics</p>
+                    </div>
+                    <!-- Legend Indicators -->
+                    <div class="flex gap-4 text-xs">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-emerald-600 block"></span>
+                            <span class="font-medium text-slate-600">Growth \(f(t)\)</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-blue-500 block"></span>
+                            <span class="font-medium text-slate-600">Rate \(f'(t)\)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas Container -->
+                <div class="relative bg-slate-50 rounded-xl p-3 border border-slate-200 min-h-[350px] flex items-center justify-center">
+                    <canvas id="kineticsChart"></canvas>
+                </div>
+
+                <div class="text-center text-xs text-slate-400">
+                    <i class="fa-solid fa-arrows-spin mr-1 text-emerald-500 animate-spin-slow"></i> 
+                    Hover or click nodes on the lines to inspect precise calculus tangents.
+                </div>
+            </div>
+
+            <!-- Dynamic Calculator/Explainer Output -->
+            <div id="inspectorPanel" class="bg-gradient-to-br from-emerald-900 to-slate-900 text-white rounded-2xl p-6 shadow-md transition-all duration-300 transform border border-emerald-800">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="p-1.5 bg-emerald-500/20 text-emerald-300 rounded-lg">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </span>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-emerald-400">Real-Time Calculus Inspector</h3>
+                    </div>
+                    <span id="dayBadge" class="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        Day 10 (Selected)
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <!-- Left: Current Cumulative Value -->
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Cumulative Biomass Density</div>
+                        <div class="text-2xl font-black text-white flex items-baseline gap-1">
+                            <span id="growthVal">45.2</span>
+                            <span class="text-xs font-medium text-slate-300">g/kg DM</span>
+                        </div>
+                        <div class="text-[11px] text-slate-400 mt-1">Current state: \(f(t)\)</div>
+                    </div>
+
+                    <!-- Right: Derivative Value -->
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 relative overflow-hidden">
+                        <div class="text-xs text-emerald-400 uppercase tracking-wide mb-1 flex items-center gap-1">
+                            <span>Instant Rate of Change</span>
+                            <i class="fa-solid fa-bolt text-amber-400 text-xs"></i>
+                        </div>
+                        <div class="text-2xl font-black text-emerald-400 flex items-baseline gap-1">
+                            <span id="rateVal">10.74</span>
+                            <span class="text-xs font-medium text-slate-300">g/kg/day</span>
+                        </div>
+                        <div class="text-[11px] text-slate-400 mt-1">Calculus Value: \(f'(t) = \frac{dX}{dt}\)</div>
+                    </div>
+                </div>
+
+                <!-- Layman Interpretation Section -->
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Layman Biotech Meaning</h4>
+                    <p id="explanationText" class="text-sm text-slate-200 leading-relaxed min-h-[50px]">
+                        At Day 10, the fungal enzymes are rapidly consuming the lignocellulose framework. The decomposition rate is extremely active, indicating this batch is right in its exponential decay phase. Optimal biodegradation window.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer with Citations & Meta Information -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-6 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="space-y-1">
+                <p class="font-semibold text-slate-300">Agro-Product Bio-Kinetics Demonstration (Malaysia)</p>
+                <p>Designed for curriculum integration in biological derivative optimization.</p>
+            </div>
+            <div class="flex flex-col items-start md:items-end gap-1">
+                <span class="text-slate-500 font-bold uppercase tracking-wider text-[10px]">Data & Modeling References:</span>
+                <p class="text-[11px]">1. Malaysian Palm Oil Board (MPOB) - <a href="https://jopr.mpob.gov.my" target="_blank" class="text-emerald-500 hover:underline">jopr.mpob.gov.my</a></p>
+                <p class="text-[11px]">2. Standard Monod & Logistic Growth Models for Lignocellulose Bioconversion (USDA Principles of Thermal and Biological Kinetics)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Constants for the Logistic Growth Equation
+        const K = 120.0;    // Carrying capacity (max microbial biomass in g/kg)
+        const X0 = 2.5;     // Initial inoculum density (g/kg)
+        const mu = 0.38;    // Max specific growth rate (per day)
+
+        // Generate Data Points (0 to 25 days, in 0.5 step increments)
+        const labels = [];
+        const growthData = [];
+        const derivativeData = [];
+
+        for (let t = 0; t <= 25; t += 0.5) {
+            labels.push(t);
+            
+            // Logistic Growth Function: f(t)
+            const exponent = -mu * t;
+            const denominator = 1 + ((K - X0) / X0) * Math.exp(exponent);
+            const ft = K / denominator;
+            growthData.push(parseFloat(ft.toFixed(2)));
+
+            // First Derivative: f'(t) = mu * f(t) * (1 - f(t)/K)
+            const fpt = mu * ft * (1 - (ft / K));
+            derivativeData.push(parseFloat(fpt.toFixed(2)));
+        }
+
+        // Layman Explanations Generator based on Day & Phase
+        function getInterpretation(day, value, rate) {
+            if (day < 3) {
+                return `**[Lag Phase (Inoculation Stage)]** At Day ${day}, the fungal spores are adjusting to the tough lignocellulosic matrix of the Empty Fruit Bunches (OPEFB). Growth is slow (${value} g/kg), and the conversion rate is minor (${rate} g/kg/day). There is low metabolic output as synthesis pathway proteins start expressing.`;
+            } else if (day >= 3 && day < 8) {
+                return `**[Early Acceleration Phase]** By Day ${day}, the fungus is successfully established! Cellulolytic enzymes (such as beta-glucosidases) are splitting cellulose chains into sugars. The conversion rate has accelerated into a strong slope (${rate} g/kg/day) as active colonization begins.`;
+            } else if (day >= 8 && day < 12) {
+                return `**[Exponential Peak Phase]** MAXIMUM BIODEGRADATION ACHIEVED! Around Day ${day}, the biological activity reaches its climax. The conversion rate is at its peak of ${rate} g/kg/day. Microbial degradation of hemicellulose and cellulose into rich bio-organic fertilizer compounds is running at maximum efficiency.`;
+            } else if (day >= 12 && day < 18) {
+                return `**[Deceleration / Exhaustion Phase]** At Day ${day}, the growth is tapering. Easily digestible nutrients in the OPEFB are becoming depleted, leaving behind more complex recalcitrant lignin structures. The rate of bioconversion is slowing down (${rate} g/kg/day), although absolute microbial biomass is high (${value} g/kg).`;
+            } else {
+                return `**[Stationary / Maturity Phase]** By Day ${day}, we have achieved system stability. Growth has leveled off near the maximum carrying capacity of ${K} g/kg. The rate of change is close to zero (${rate} g/kg/day). It is now time to harvest the converted bio-fertilizer and package it for Malaysian palm plantations.`;
+            }
+        }
+
+        // State Trackers
+        let selectedIndex = 20; // Default to Day 10 (index 20 in steps of 0.5)
+
+        // Initialize UI Elements
+        const dayBadge = document.getElementById('dayBadge');
+        const growthVal = document.getElementById('growthVal');
+        const rateVal = document.getElementById('rateVal');
+        const explanationText = document.getElementById('explanationText');
+
+        function updateInspector(index) {
+            const day = labels[index];
+            const growth = growthData[index];
+            const rate = derivativeData[index];
+
+            dayBadge.innerText = `Day ${day.toFixed(1)} (Selected)`;
+            growthVal.innerText = growth.toFixed(2);
+            rateVal.innerText = rate.toFixed(2);
+            explanationText.innerHTML = getInterpretation(day, growth, rate);
+        }
+
+        // Initialize the Chart.js Instance
+        const ctx = document.getElementById('kineticsChart').getContext('2d');
+        const kineticsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Microbial Biomass f(t)',
+                        data: growthData,
+                        borderColor: '#059669', // Emerald 600
+                        backgroundColor: 'rgba(5, 150, 105, 0.05)',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#047857',
+                        pointHoverRadius: 8,
+                        pointHoverBackgroundColor: '#10b981',
+                        yAxisID: 'yGrowth',
+                        tension: 0.35,
+                        fill: true
+                    },
+                    {
+                        label: "Bioconversion Rate f'(t)",
+                        data: derivativeData,
+                        borderColor: '#3b82f6', // Blue 500
+                        borderDash: [5, 5],
+                        borderWidth: 2.5,
+                        pointBackgroundColor: '#1d4ed8',
+                        pointHoverRadius: 8,
+                        pointHoverBackgroundColor: '#60a5fa',
+                        yAxisID: 'yRate',
+                        tension: 0.35,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
+                plugins: {
+                    legend: {
+                        display: false // Using custom top legend
+                    },
+                    tooltip: {
+                        backgroundColor: '#0f172a',
+                        titleColor: '#e2e8f0',
+                        bodyColor: '#e2e8f0',
+                        padding: 12,
+                        cornerRadius: 8,
+                        borderColor: '#334155',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.datasetIndex === 0) {
+                                    label += context.parsed.y + ' g/kg';
+                                } else {
+                                    label += context.parsed.y + ' g/kg/day';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                onClick: (evt, activeElements) => {
+                    if (activeElements.length > 0) {
+                        const index = activeElements[0].index;
+                        selectedIndex = index;
+                        updateInspector(index);
+                        
+                        // Highlight selected point with visual pulse effect or redraw
+                        kineticsChart.update();
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Bioprocessing Duration (Days)',
+                            color: '#475569',
+                            font: {
+                                size: 12,
+                                weight: '600'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.1)'
+                        },
+                        ticks: {
+                            color: '#64748b'
+                        }
+                    },
+                    yGrowth: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Fungal Biomass Density, f(t) (g/kg dry matter)',
+                            color: '#047857',
+                            font: {
+                                size: 12,
+                                weight: '600'
+                            }
+                        },
+                        ticks: {
+                            color: '#047857'
+                        },
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.1)'
+                        }
+                    },
+                    yRate: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: "Bioconversion Speed, f'(t) (g/kg/day)",
+                            color: '#1d4ed8',
+                            font: {
+                                size: 12,
+                                weight: '600'
+                            }
+                        },
+                        ticks: {
+                            color: '#1d4ed8'
+                        },
+                        grid: {
+                            drawOnChartArea: false // prevent grid line overlapping
+                        }
+                    }
+                }
+            }
+        });
+
+        // Load Default State
+        window.onload = function() {
+            updateInspector(selectedIndex);
+        };
+    </script>
+</body>
+</html>
